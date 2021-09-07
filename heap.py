@@ -29,8 +29,10 @@ def heapify(arr, index, heapSize):
 def heapSort(arr):
     n = len(arr)
     heapSize = 0
-    for i in range(n):
-        heapInsert(arr, i)
+    # for i in range(n):
+    #     heapInsert(arr, i)
+    for i in range(n-1, -1, -1):
+        heapify(arr, i, n)
     heapSize = n
     while heapSize > 0:
         arr[0], arr[heapSize-1] = arr[heapSize-1], arr[0]
